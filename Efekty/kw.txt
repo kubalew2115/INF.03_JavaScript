@@ -1,0 +1,20 @@
+1.SELECT imie, pensja FROM `pracownicy` WHERE staz < 5;
+
+2.SELECT AVG(pracownicy.pensja), stanowiska.nazwa FROM `pracownicy` JOIN stanowiska ON stanowiska.id = pracownicy.stanowiska_id GROUP BY stanowiska.nazwa;
+
+3. nie wiem
+
+4.UPDATE `pracownicy` SET `staz` = '31' WHERE `pracownicy`.`id` = 1;
+UPDATE `pracownicy` SET `staz` = '21' WHERE `pracownicy`.`id` = 2;
+UPDATE `pracownicy` SET `staz` = '16' WHERE `pracownicy`.`id` = 3;
+UPDATE `pracownicy` SET `staz` = '11' WHERE `pracownicy`.`id` = 4;
+UPDATE `pracownicy` SET `staz` = '6' WHERE `pracownicy`.`id` = 5;
+UPDATE `pracownicy` SET `staz` = '6' WHERE `pracownicy`.`id` = 6;
+UPDATE `pracownicy` SET `staz` = '2' WHERE `pracownicy`.`id` = 7;
+UPDATE `pracownicy` SET `staz` = '3' WHERE `pracownicy`.`id` = 8;
+UPDATE `pracownicy` SET `staz` = '14' WHERE `pracownicy`.`id` = 9;
+UPDATE `pracownicy` SET `staz` = '11' WHERE `pracownicy`.`id` = 10;
+UPDATE `pracownicy` SET `staz` = '10' WHERE `pracownicy`.`id` = 11;
+UPDATE `pracownicy` SET `staz` = '9' WHERE `pracownicy`.`id` = 12;
+UPDATE `pracownicy` SET `staz` = '6' WHERE `pracownicy`.`id` = 13;
+UPDATE `pracownicy` SET `staz` = '6' WHERE `pracownicy`.`id` = 14;

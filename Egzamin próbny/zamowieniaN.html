@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawiarnia Kaffeesahne</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styl3.css">
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="baner.png"></a>
+    </header>
+    <menu>
+        <a href="oferta.html">NASZA OFERTA</a>
+        <a href="zamowienia.html">ZAMÓWIENIA</a>
+    </menu>
+    <aside>
+        <h3>Twoje zamówienie</h3>
+        <p id="wynik"></p>
+    </aside>
+    <main>
+        <h3>Złóż zamówienie</h3><br>
+            <form>            
+                <label>Imię klienta: <input type="text" id="imie"></label>
+                
+                <p>Wybierz rozdzaj kawy:</p>
+
+                <label><input type="checkbox" id="lungo"> Lungo americano - 10,50zł</label><br>
+                <label><input type="checkbox" id="mac"> Macchiato - 12,00zł</label><br>
+                <label><input type="checkbox" id="cap"> Cappuccino - 9,00zł</label><br>
+                <label><input type="checkbox" id="esp"> Espresso - 8,00zł</label><br>
+                <label><input type="checkbox" id="moch"> Mocha - 11,00zł</label><br><br>
+
+                <button id="button">Zamawiam kawę</button>      
+                <button type="reset">Wyczyść</button>  
+            </form>
+
+        <script>
+            let button = document.getElementById("button");
+
+            button.addEventListener("click", function(){
+                event.preventDefault()
+                let imie = document.getElementById("imie").value;
+                let lungo = document.getElementById("lungo").checked;
+                let mac = document.getElementById("mac").checked;
+                let cap = document.getElementById("cap").checked;
+                let esp = document.getElementById("esp").checked;
+                let moch = document.getElementById("moch").checked;
+
+                let lungoW = "";
+                let macW = "";
+                let capW = "";
+                let espW = "";
+                let mochW = "";
+
+                let cena = 0;
+
+                if(lungo == true){
+                    lungoW = "Lungo americano"
+                    cena += 10.50
+                }
+                if(mac == true){
+                    macW = ", Macchiato"
+                    cena += 12
+                }
+                if(cap == true){
+                    capW = ", Cappuccino"
+                    cena += 9
+                }
+                if(esp == true){
+                    espW = ", Espresso"
+                    cena += 8
+                }
+                if(moch == true){
+                    mochW = ", Mocha"
+                    cena += 11
+                }
+
+                let wynik = "Twoje imię to: " + imie + "<br>" + "Wybrałeś kawy:" + "<br>" + lungoW +  macW + capW + espW + mochW + "<br>" + "Koszt zamówienia: " + cena
+
+                document.getElementById("wynik").innerHTML = wynik
+            })
+        </script>
+    </main>
+    <footer>
+        <p>Stronę wykonał: 07260901135</p>
+    </footer>
+</body>
+</html>

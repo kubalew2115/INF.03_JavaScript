@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h2>Chat</h2>
+    </header>   
+    <nav>
+        <h3>Chaty</h3>
+        <ul>
+            <li>Ogólny</li>
+            <li>Tematyczne
+                <ol>
+                    <li>Turystyczny</li>
+                    <li>Żeglarski</li>
+                    <li>Filateistyczny</li>
+                    <li>Hodowla zwierzątek domowych</li>
+                </ol>
+            </li>
+        </ul>
+        <h3>Uczestnicy</h3>
+        <p>Jolanta Nowak</p>
+        <img src="Jolka.jpg" alt="Jolanta Nowak">
+        <p>Krzysztof Łukasiński</p>
+        <img src="Krzysiek.jpg" alt="Krzysztof Łukasiński">
+    </nav>
+    <main>
+        <section id="blok">       
+            <div id="jolka">
+                <img src="Jolka.jpg">
+                <p>Cześć idziesz jutro do kina?</p>
+            </div>
+            <div id="krzysiek">
+                <img src="Krzysiek.jpg">
+                <p>Tak! a Ty?</p>
+            </div>
+        </section>
+        <form>
+            <label>Wpisz wiadomość: <input type="text" id="wiadomosc"></label>
+            <button id="button" type="button">Wyślij</button>
+        </form>            
+        <script>
+                let button =  document.getElementById("button")
+
+                button.addEventListener("click", function(){
+                    let wiadomosc = document.getElementById("wiadomosc").value;
+
+                    let wynik = "<div id='jolka'><img src='Jolka.jpg'><p>"+ wiadomosc +"</p></div>"
+
+                    document.getElementById('blok').innerHTML += wynik;
+                })
+            </script>
+        <button onclick="odpowiedz()">Generuj losową odpowiedź</button>
+        <script>
+            function odpowiedz(){
+                let tablica = [
+                    "Świetnie!",
+                    "Kto gra główną rolę?",
+                    "Lubisz filmy Tego reżysera?",
+                    "Będę 10 minut wcześniej",
+                    "Może kupimy sobie popcorn?",
+                    "Ja wolę Colę",
+                    "Zaproszę jeszcze Grześka",
+                    "Tydzień temu też byłem w kinie na Diunie",
+                    "Ja funduję bilety"
+                ]
+
+                let cyfraTest = Math.floor((Math.random() * 10))
+
+                let cyfra
+
+                if(cyfraTest == 9){
+                    cyfra = cyfraTest - 1
+                }else{
+                    cyfra = cyfraTest
+                }
+
+                let wygenerowanaOdp = tablica[cyfra];
+
+                let wynik1 = "<div id='krzysiek'><img src='Krzysiek.jpg'><p>"+ wygenerowanaOdp +"</p></div>"
+
+                document.getElementById('blok').innerHTML += wynik1;
+
+            }
+        </script>
+    </main>
+    <footer>
+        <h5>Chat wykonał: 070609834573</h5>
+    </footer>
+</body>
+</html>

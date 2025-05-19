@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekt obrazu</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <h2>Efekty na obrazach</h2>
+    </header>
+    <nav> 
+        <img src="pszczola.jpg" alt="pszczoła na fioletowym kwiatku" id="pszczola">
+        <form>
+            <label><input type="radio" name="l" id="blur">Blur</label><br>
+            <label><input type="radio" name="l" id="sepia">Sepia</label><br>
+            <label><input type="radio" name="l" id="negatyw">Negatyw</label><br>
+            <button type="button" id="btn1">Zastosuj</button>
+        </form>
+    </nav>
+    <script>
+        let blur = document.getElementById("blur");
+        let sepia =  document.getElementById("sepia");
+        let negatyw = document.getElementById("negatyw");
+
+        let btn1 = document.getElementById("btn1");
+
+        btn1.addEventListener("click", function(){
+            if(blur.checked == true){
+                document.getElementById("pszczola").style.filter = "blur(4px)";
+            }else if(sepia.checked == true){
+                document.getElementById("pszczola").style.filter = "sepia(100%)";
+            }else{
+                document.getElementById("pszczola").style.filter = "invert(100%)";
+            }
+        })
+    </script>
+    <section>
+        <img src="pomarancza.jpg" alt="drzewo pomarańczy" id="pomarancza"><br>
+        <button onclick="kolor()">Kolorowy</button>
+        <button onclick="czarno()">Czarno biały</button>
+    </section>
+    <script>
+        function kolor(){
+            document.getElementById("pomarancza").style.filter = "none";
+        }
+        function czarno(){
+            document.getElementById("pomarancza").style.filter = "grayscale(100%)";
+        }
+    </script>
+    <main>
+        <img src="owoce.jpg" alt="Kosz pełen owoców" id="owoce"><br>
+        <form>
+            <input type="range" min="0" max="100" value="100" class="range" id="range"><br>
+            <button type="button" id="btn2">Zastosuj</button>
+        </form>
+        <script>
+            let range = document.getElementById("range");
+
+            let btn2 =  document.getElementById("btn2");
+
+            btn2.addEventListener("click", function(){
+                let rangeC = range.value;
+
+                document.getElementById("owoce").style.filter = "opacity("+rangeC+"%)";
+            })
+        </script>
+    </main>
+    <aside>
+        <img src="zolw.jpg" alt="Żółw w wodzie" id="zolw"><br>
+        <form>
+            <input type="range" min="0" max="250" class="range" id="range1"><br>
+            <button type="button" id="btn3">Zastosuj</button>
+        </form>
+    </aside>
+    <script>
+            let range1 = document.getElementById("range1");
+
+            let btn3 =  document.getElementById("btn3");
+
+            btn3.addEventListener("click", function(){
+                let rangeCC = range1.value;
+
+                document.getElementById("zolw").style.filter = "brightness("+rangeCC+"%)";
+            })
+    </script>
+    <footer>
+        <p><a href="http://www.css.com/">Zobacz inne efekty obrazu</a></p>
+        <p>Stronę wykonał: 070609834423</p>
+    </footer>
+</body>
+</html>

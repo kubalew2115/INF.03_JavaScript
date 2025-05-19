@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sklep - rejestracja</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <aside>
+        <img src="obraz.png" alt="promocje">
+        <h2>Sprawdź promocje</h2>
+        <table>
+            <tr>
+                <th>co?</th>
+                <th>ile taniej></th>
+            </tr>
+            <tr>
+                <td>ubrania</td>
+                <td>15%</td>
+            </tr>
+            <tr>
+                <td>buty</td>
+                <td>25%</td>
+            </tr>
+        </table>
+    </aside>
+    <header>
+        <h1>Zarejestruj się w sklepie</h1>
+    </header>
+    <main>
+        <button onclick="klient()">Klient</button>
+        <script>
+            function klient(){
+                let jeden = document.getElementById("jeden")
+                let dwa = document.getElementById("dwa")
+                let trzy = document.getElementById("trzy")
+
+                jeden.style.display = "block"
+                dwa.style.display = "none"
+                trzy.style.display = "none"
+            }
+        </script>
+        <button onclick="adres()">Adres</button>
+        <script>
+            function adres(){
+                let jeden = document.getElementById("jeden")
+                let dwa = document.getElementById("dwa")
+                let trzy = document.getElementById("trzy")
+
+                jeden.style.display = "none"
+                dwa.style.display = "block"
+                trzy.style.display = "none"
+            }
+        </script>
+        <button onclick="kontakt()">Kontakt</button>
+        <script>
+            function kontakt(){
+                let jeden = document.getElementById("jeden")
+                let dwa = document.getElementById("dwa")
+                let trzy = document.getElementById("trzy")
+
+                jeden.style.display = "none"
+                dwa.style.display = "none"
+                trzy.style.display = "block"
+            }
+        </script>        
+        <div id="jeden">
+            <form>
+                <p>Imię</p>
+                <input type="text" placeholder="Wpisz dane..." id="imie" onfocus="pasek(16)">
+                <p>Nazwisko</p>
+                <input type="text" id="nazwisko" onfocus="pasek(28)">
+                <p>Data urodzenia</p>
+                <input type="date" id="date" onfocus="pasek(40)">
+            </form>
+        </div>
+        <div id="dwa">
+            <form>
+                <p>Ulica</p>
+                <input type="text" id="ulica" onfocus="pasek(52)">
+                <p>Numer</p>
+                <input type="text" id="numer" onfocus="pasek(64)">
+                <p>Miasto</p>
+                <input type="text" id="miasto" onfocus="pasek(76)">
+            </form>
+        </div>
+        <div id="trzy"> 
+            <form>
+                <p>Numer kontaktowy</p>
+                <input type="text" id="telefon" onfocus="pasek(88)"><br>
+                <label>Akceptuję RODO<input type="checkbox" id="rodo" onfocus="pasek(100)"></label><br>
+                <button type="button" id="button">Zatwierdź dane</button>
+            </form>
+            <script>
+                let imie = document.getElementById("imie")
+                let nazwisko = document.getElementById("nazwisko")
+                let date = document.getElementById("date")
+                let ulica = document.getElementById("ulica")
+                let numer = document.getElementById("numer")
+                let miasto = document.getElementById("miasto")
+                let telefon = document.getElementById("telefon")
+                let rodo = document.getElementById("rodo")
+
+                let button = document.getElementById("button")
+
+                button.addEventListener("click", function(){
+                    let imieW = imie.value;
+                    let nazwiskoW = nazwisko.value;
+                    let dataW = date.value;
+                    let ulicaW = ulica.value;
+                    let numerW = numer.value;
+                    let miastoW = miasto.value;
+                    let telefonW = telefon.value;
+                    let rodoW = rodo.checked;
+
+                    let rodoO = "";
+
+                    if(rodoW == true){
+                        rodoO = "on"
+                    }else{
+                        rodoO = "off"
+                    }
+
+                    let wynik = imieW + ", " + nazwiskoW + ", " + dataW + ", " + ulicaW + ", " + numerW + ", " + miastoW + ", " + telefonW + ", " + rodoO
+
+                    console.log(wynik);
+                })
+            </script>
+        </div>
+    </main>
+    <script>
+        function pasek(x){
+            document.getElementById("postep").style.width = x+"%"
+        }
+    </script>
+    <nav>
+        <section id="postep"></section>
+    </nav>
+    <footer>
+        <h4>Rejestrację do sklepu wykonał: 07060975464</h4>
+    </footer>
+</body>
+</html>

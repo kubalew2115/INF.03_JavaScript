@@ -1,0 +1,59 @@
+*{
+    font-family: Georgia;
+    color: white;
+}
+header, footer{
+    background-color: maroon;
+    text-align: center;
+    padding: 2px;
+}
+aside, main, nav{
+    background-color: lightsalmon;
+    height: 527px;
+    float: left;
+}
+aside, nav{
+    width: 15%;
+}
+main{
+    width: 70%;
+}
+section{
+    background-color: maroon;
+    height: 70px;
+    clear: both;
+}
+button{
+    background-color: lightsalmon;
+    color: maroon;
+    border: none;
+    font-size: 400%;
+    display: block;
+    margin: auto;
+    padding-top: 210px;
+}
+section img{
+    height: 70px;
+    animation-name: mymove;
+    animation-duration: 4s;
+}
+@keyframes mymove{
+    from {margin-left: 50px;}
+    to{margin-left: 0px;}
+}
+#aktywneZdjęcie{
+    display: block;
+    margin: auto;
+    padding-top: 45px;
+}
+#aktywneZdjęcie:hover{
+    animation-name: skala;
+    animation-duration: 5s;
+}
+@keyframes skala{
+    from{transform: scale(100%);}
+    to{transform: scale(120%);}
+}
+footer{
+    clear: both;
+}

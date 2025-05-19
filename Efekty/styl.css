@@ -1,0 +1,39 @@
+*{
+    font-family: serif;
+    text-align: center;
+}
+header, footer{
+    background-color: indigo;
+    color: white;
+    font-style: italic;
+    padding: 2px;
+}
+nav, section, main, aside{
+    width: 50%;
+    height: 470px;
+    float: left;
+}
+img{
+    padding: 3px;
+    margin: 10px;
+    border: 2px steelblue dashed;
+}
+a{
+    color: white;
+}
+button{
+    background-color: slateblue;
+    color: white;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    margin-top: 10px;
+}
+button:hover{
+    background-color: indigo;
+}
+.range{
+    width: 80%;
+}
+footer{
+    clear: both;
+}

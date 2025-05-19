@@ -1,0 +1,7 @@
+1.SELECT nazwisko, imie, PESEL, miejscowosc, telefon FROM `klient` WHERE miejscowosc = 'Warszawa' OR miejscowosc = 'Kraków' OR telefon IS NULL or telefon = '';
+
+2.SELECT COUNT(zamowienia.ile_zamowionych_kaw), kawa.rodzaj_kawy FROM `kawa` JOIN zamowienia ON zamowienia.id_kawy = kawa.Id_kawy GROUP BY rodzaj_kawy;
+
+3.SELECT klient.nazwisko, klient.imie, zamowienia.data_zamowienia, zamowienia.godzina_zamowienia, kawa.rodzaj_kawy, kawa.cena, zamowienia.ile_zamowionych_kaw FROM `zamowienia` JOIN klient ON zamowienia.id_klienta = klient.id_klienta JOIN kawa ON kawa.Id_kawy = zamowienia.id_kawy ORDER BY zamowienia.ile_zamowionych_kaw DESC;
+
+4.SELECT klient.nazwisko, klient.imie FROM `klient` JOIN zamowienia ON klient.id_klienta = zamowienia.id_klienta WHERE zamowienia.ile_zamowionych_kaw = 0;

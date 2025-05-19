@@ -1,0 +1,7 @@
+1. SELECT cena, pojemnosc FROM `farby` WHERE kolor = "czerwony";
+
+2. SELECT kolor, cena/pojemnosc AS "cena jednostkowa" FROM `farby` GROUP BY kolor;
+
+3.SELECT farby.kolor, malowanie.liczba_puszek FROM `malowanie` JOIN farby ON malowanie.id_farby = farby.id_farby WHERE id_pomieszczenia = "3";
+
+4.nie wiem
